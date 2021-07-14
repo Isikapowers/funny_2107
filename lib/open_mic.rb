@@ -1,4 +1,5 @@
 class OpenMic
+
   attr_reader :location,
               :date,
               :performers
@@ -14,9 +15,14 @@ class OpenMic
   end
 
   def repeated_jokes?
-    jokes = @performers.map do |user|
-      user.jokes
-    end.flatten
+    jokes = []
+    @performers.each do |user|
+      user.jokes.each do |joke|
+        jokes << joke.id
+      end
+    end
+
     jokes.length != jokes.uniq.length
   end
+
 end

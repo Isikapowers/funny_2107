@@ -1,6 +1,6 @@
 class User
-  attr_reader :name,
-              :jokes
+
+  attr_reader :name, :jokes
 
   def initialize(name)
     @name = name
@@ -20,4 +20,5 @@ class User
       joke.id == id
     end
   end
+
 end
